@@ -9,6 +9,7 @@ from segmentation_models import Unet
 from segmentation_models import Linknet
 from segmentation_models import PSPNet
 from segmentation_models import FPN
+from segmentation_models import Xnet
 from segmentation_models import get_available_backbone_names
 
 if sm.framework() == sm._TF_KERAS_FRAMEWORK_NAME:
@@ -17,6 +18,7 @@ elif sm.framework() == sm._KERAS_FRAMEWORK_NAME:
     import keras
 else:
     raise ValueError('Incorrect framework {}'.format(sm.framework()))
+
 
 def get_backbones():
     is_travis = os.environ.get('TRAVIS', False)
@@ -130,6 +132,18 @@ def test_fpn(backbone):
 
     _test_shape(
         FPN, backbone, input_shape=(256, 256, 4), encoder_weights=None)
+
+
+@pytest.mark.parametrize('backbone', _select_names(BACKBONES))
+def test_xnet(backbone):
+    _test_none_shape(
+        Xnet, backbone, encoder_weights=None)
+
+    _test_none_shape(
+        Xnet, backbone, encoder_weights='imagenet')
+
+    _test_shape(
+        Xnet, backbone, input_shape=(256, 256, 4), encoder_weights=None)
 
 
 if __name__ == '__main__':
