@@ -166,6 +166,7 @@ Models and Backbones
 -  `FPN <http://presentations.cocodataset.org/COCO17-Stuff-FAIR.pdf>`__
 -  `Linknet <https://arxiv.org/abs/1707.03718>`__
 -  `PSPNet <https://arxiv.org/abs/1612.01105>`__
+-  `UnetPlusPLus (Xnet) <https://github.com/MrGiovanni/UNetPlusPlus>`__
 
 ============= ==============
 Unet          Linknet
@@ -235,11 +236,17 @@ Installation
 
     $ pip install -U --pre segmentation-models
 
-**Source latest version**
+**Source latest version (original)**
 
 .. code:: bash
 
     $ pip install git+https://github.com/qubvel/segmentation_models
+    
+**Source latest version (SCCH-KVS fork)**
+
+.. code:: bash
+
+    $ pip install git+https://github.com/SCCH-KVS/segmentation_models
     
 Documentation
 ~~~~~~~~~~~~~
