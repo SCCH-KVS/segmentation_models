@@ -18,7 +18,7 @@
 **The main features** of this library are:
 
 -  High level API (just two lines of code to create model for segmentation)
--  **4** models architectures for binary and multi-class image segmentation
+-  **5** models architectures for binary and multi-class image segmentation
    (including legendary **Unet**)
 -  **25** available backbones for each architecture
 -  All backbones have **pre-trained** weights for faster and better
